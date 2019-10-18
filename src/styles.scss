@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import "../node_modules/ngx-toastr/toastr.css";
+@import './styles/theme.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.theme{
+    @include angular-material-theme($theme);
+}
+.wrapper{
+    background-color: $light-gray-color2;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.full-height{
+    height: 100% !important;
+}
+.full-width{
+    width: 100% !important;
+}
+.no-border{
+    border-radius: 0% !important;
+}
+.without-padding [class*="wp"] {
+    padding: 0;
+}
+//fonts
+.titles{
+    font-size: 30px !important;
+    font-weight: 500 !important;
+}
+.profileName{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0ch !important;
+}
+.subtitles{
+    font-size: 18px !important;
+    color: $light-gray-color;
+}
+.subtitles2{
+    font-size: 15px !important;
+    color: $light-gray-color;
+}
+.text{
+    
+}
+.margin-top{
+    margin-top: 40px !important;
+}

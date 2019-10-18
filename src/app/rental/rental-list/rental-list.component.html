@@ -1,0 +1,70 @@
+<div class="row view">
+    <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle value="list" aria-label="Text align left">
+            <mat-icon>view_list</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="grid" aria-label="Text align center" #selected>
+            <mat-icon>grid_on</mat-icon>
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+    <div class="example-selected-value">Selected value: {{group.value}}
+    </div>
+
+</div>
+<div class="row" *ngIf="group.value == 'grid'">
+    <!--Iterar publicaciones-->
+    <div class="col-lg-6 col-md-12 col-sm-12 without-padding" *ngFor="let rental of rentals">
+        <mat-card class="card publications no-border text-white wp">
+            <img class="card-img no-border" src="../../../assets/images/uaa.jpg">
+            <div class="card-img-overlay overlay">
+
+                <div class="row  options">
+                    <div class="col-12" >
+                        <h5 class="card-title">{{rental.title}}</h5>
+                        <button class="config" mat-mini-fab color="primary"
+                            aria-label="Example icon-button with a heart icon">
+                            <mat-icon>build</mat-icon>
+                        </button>
+                        <button class="delete" mat-mini-fab color="warn"
+                            aria-label="Example icon-button with a heart icon">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button class="rented" mat-mini-fab color="accent"
+                            aria-label="Example icon-button with a heart icon">
+                            <mat-icon>add_shopping_cart</mat-icon>
+                        </button>
+
+                    </div>
+                    <div class="col-6">
+
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div class="row" *ngIf="group.value == 'list'">
+    <div class="col-12 publications-list" *ngFor="let rental of rentals">
+            <mat-card class="no-border">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{user.name}}</mat-card-title>
+                    <mat-card-subtitle>{{rental.date}} </mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image
+                    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <p>
+                        {{rental.description}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Editar</button>
+                    <button mat-raised-button color="warn">Eliminar</button>
+                    <button mat-raised-button color="accent">Rentar</button>
+                </mat-card-actions>
+            </mat-card>
+
+        </div>
+</div>

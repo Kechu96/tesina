@@ -1,0 +1,63 @@
+.view{
+    padding: 5px 16px;
+  }
+  .publications{
+    .overlay{
+      cursor: pointer;
+      transition: background-color 0.5s, display 0.5s;
+      .options{
+        .col-12{
+          .config, .delete{
+            margin-bottom: 5px;
+          }
+          .config,.delete, .rented{
+            display: none;
+          }
+        }
+        
+      }
+      &:hover{
+        background: rgba(0, 0, 0, 0.5); 
+          .options{
+            .col-12{
+              .config,.delete, .rented{
+                display: block;
+              }
+            }
+            
+          }
+      
+        
+      }
+    }
+  }
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .publications-list{
+    margin-bottom: 10px;
+  }
+  @media (max-width: 970px){
+   
+    .publications{
+     
+      .overlay{
+        background: rgba(0, 0, 0, 0.5);
+        .options{
+          .col-12{
+            .delete, .config, .rented{
+              display: inline-block;
+             // width: 5%;
+            }
+            .config{
+              margin-right: 5px;
+            }
+          }
+          
+        }
+      }
+      
+    }
+    
+  }

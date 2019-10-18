@@ -1,0 +1,39 @@
+
+
+.fieldLogin{
+    width: 90%;
+}
+
+.inputsLogin{
+    height: 50px;
+}
+.formElements{
+    height: 10%;
+}
+form{
+    margin-bottom: 20px;
+}
+.bottom-text{
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+.progress-bar{
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    top: 0%;
+    width: 100%;
+}
+button{
+    mat-spinner{
+        margin: 0 50%;
+        z-index: 9999999;
+    }
+}
+.without-padding [class*="wp"] {
+    padding: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+}

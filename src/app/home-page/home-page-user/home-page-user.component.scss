@@ -1,0 +1,81 @@
+@import 'variables';
+
+.parallax{
+    background-image: url("../../../assets/images/uaa.jpg");
+    min-height: 400px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax2{
+    background-image: url("../../../assets/images/uaa.jpg");
+    min-height: 400px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.spacer{
+    flex: 1 1 auto;
+  }
+  .nav-link{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  .title{
+    cursor: pointer;
+  }
+.img-cta{
+    width: 100% !important;
+}
+.text-cta{
+    text-align: justify;
+}
+.message{
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 40px;
+}
+.objetive{
+    color: $principal-color;
+}
+
+.spacer{
+    color: rgba(0,0,0,0.001);
+}
+.buttonInfo{
+    margin: 10px 45.5%;
+}
+mat-card{
+    margin-top: 20px;
+    position: relative;
+    transition: background-color 0.5s, display 10s;
+    .footer-info{
+        display: none;
+        position: absolute;
+        margin: -20% 18%;
+        
+    }
+    &:hover{
+        background: rgba(0,0,0,0.5);
+        z-index: 0;
+        .footer-info{
+            z-index: 999999;
+            display: block;
+
+            
+        }
+    }
+
+}
+mat-card-header{
+    position: relative;
+}
+mat-card-header button{
+    top: 50%;
+    right: 40%;
+    margin-top: -45px;
+    position: absolute;
+}

@@ -1,0 +1,219 @@
+<div class="container  margin-top">
+    <div class="row without-padding justify-content-center">
+        <div class="col-lg-8 col-md-12 col-sm-12  wp form">
+            <mat-card class="no-border">
+                <h3 class="titles text-center">Registrate</h3>
+                <p class="subtitles text-center">¿Aún no tienes cuenta? Registrate ahora</p>
+                <mat-horizontal-stepper [linear]="true" #stepper>
+
+                    <mat-step [stepControl]="userDataForm" class="container-fluid">
+                        <form #userDataForm="ngForm" class="row">
+                            <ng-template matStepLabel>Datos personales</ng-template>
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width">
+                                    <input [(ngModel)]="user.name" [errorStateMatcher]="matcher" #name="ngModel"
+                                        name="name" matInput placeholder="Nombre" pattern="^[a-zA-Z ]+$" required>
+                                    <mat-error
+                                        *ngIf="(name.invalid && (name.dirty || name.touched)) && name.errors.required">
+                                        Campo
+                                        obligatorio</mat-error>
+                                    <mat-error
+                                        *ngIf="(name.invalid && (name.dirty || name.touched)) && name.errors.pattern">
+                                        Solo
+                                        puedes
+                                        ingresar letras</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width">
+                                    <input [(ngModel)]="user.lastName" #lastName="ngModel" name="lastName" matInput
+                                        placeholder="Apellido paterno" pattern="^[a-zA-Z ]+$" required>
+                                    <mat-error
+                                        *ngIf="(lastName.invalid && (lastName.dirty || lastName.touched)) && lastName.errors.required">
+                                        Campo
+                                        obligatorio</mat-error>
+                                    <mat-error
+                                        *ngIf="(lastName.invalid && (lastName.dirty || lastName.touched)) && lastName.errors.pattern">
+                                        Solo puedes
+                                        ingresar letras</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width">
+                                    <input [(ngModel)]="user.lastName2" #lastName2="ngModel" name="lastName2" matInput
+                                        placeholder="Apellido materno" pattern="^[a-zA-Z ]+$" required>
+                                    <mat-error
+                                        *ngIf="(lastName2.invalid && (lastName2.dirty || lastName2.touched)) && lastName2.errors.required">
+                                        Campo
+                                        obligatorio</mat-error>
+                                    <mat-error
+                                        *ngIf="(lastName2.invalid && (lastName2.dirty || lastName2.touched)) && lastName2.errors.pattern">
+                                        Solo puedes
+                                        ingresar letras</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width">
+                                    <input [(ngModel)]="user.age" type="number" #age="ngModel" name="age" matInput
+                                        placeholder="Edad" pattern="^[0-9]+$" required>
+                                    <mat-error
+                                        *ngIf="(age.invalid && (age.dirty || age.touched)) && age.errors.required">Campo
+                                        obligatorio</mat-error>
+                                    <mat-error
+                                        *ngIf="(age.invalid && (age.dirty || age.touched)) && age.errors.pattern">Solo
+                                        puedes
+                                        ingresar numeros</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width">
+                                    <mat-label>Genero</mat-label>
+                                    <mat-select [(ngModel)]="user.gender" #gender="ngModel" name="gender" required>
+                                        <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                                            {{gender.value}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error
+                                        *ngIf="(gender.invalid && (gender.dirty || gender.touched)) && gender.errors.required">
+                                        Campo
+                                        obligatorio</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-12">
+                                <button mat-stroked-button matStepperNext color="primary">Siguiente</button>
+                            </div>
+                        </form>
+                    </mat-step>
+                    <mat-step [stepControl]="contactDataForm">
+                        <form #contactDataForm="ngForm" class="row">
+                            <ng-template matStepLabel>Datos de contacto</ng-template>
+                            <div class="col-lg-12">
+                                <mat-form-field class="full-width">
+                                    <input matInput [(ngModel)]="user.phone" name="phone" #phone="ngModel"
+                                        placeholder="Telefono personal" pattern="^[0-9]{10}$" required>
+                                    <mat-error
+                                        *ngIf="(phone.invalid && (phone.dirty || phone.touched)) &&  phone.errors.required">
+                                        Campo obligatorio</mat-error>
+                                    <mat-error
+                                        *ngIf="(phone.invalid && (phone.dirty || phone.touched)) &&  phone.errors.pattern">
+                                        Tienes que ingresar 10 numeros</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-lg-12">
+                                <mat-form-field class="full-width">
+                                    <input matInput [(ngModel)]="user.email" type="email" name="email" #email="ngModel"
+                                        placeholder="Correo electronico"
+                                        pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                                        required>
+                                    <mat-error
+                                        *ngIf="(email.invalid && (email.dirty || email.touched)) &&  email.errors.required">
+                                        Campo obligatorio</mat-error>
+                                    <mat-error
+                                        *ngIf="(email.invalid && (email.dirty || email.touched)) &&  email.errors.pattern">
+                                        Ingresa un formato de correo valido</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-lg-12">
+                                    <mat-form-field class="full-width">
+                                    <mat-label>Universidad</mat-label>
+                                    <mat-select [(ngModel)]="user.school" #school="ngModel" name="school" required>
+                                        <mat-option *ngFor="let u of universities" [value]="u">
+                                            {{u.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error
+                                        *ngIf="(school.invalid && (school.dirty || school.touched)) &&  school.errors.required">
+                                        Campo obligatorio</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-lg-12">
+                                <mat-form-field class="full-width">
+                                    <input matInput [(ngModel)]="user.password" type="password" name="password"
+                                        #password="ngModel" placeholder="Contraseña" required>
+                                    <mat-error
+                                        *ngIf="(password.invalid && (password.dirty || password.touched)) &&  password.errors.required">
+                                        Campo obligatorio</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-lg-12">
+                                <mat-form-field class="full-width">
+                                    <input matInput [(ngModel)]="user.confirmPassword" type="password"
+                                        name="confirmPassword" #confirmPassword="ngModel"
+                                        placeholder="Confirmar contraseña" required>
+                                    <mat-error
+                                        *ngIf="(confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched))  &&  confirmPassword.errors.required ">
+                                        Campo obligatorio</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-lg-12">
+                                <button mat-stroked-button matStepperPrevious color="accent"
+                                    class="float-left">Atras</button>
+                                <button mat-stroked-button matStepperNext color="primary"
+                                    class="float-right">Siguiente</button>
+                            </div>
+
+
+                        </form>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>Hecho</ng-template>
+                        <div class="row">
+                            <div class="col-lg-12 details">
+                                <div class="row without-padding">
+                                    <div class="col-md-8 wp">
+                                        <h3 class="titles">Tu cuenta ya casi esta lista.</h3>
+                                        <h5 class="subtitles">Estos son tus datos</h5>
+
+                                        <div>
+                                            <span class="subtitles2">Nombre completo:</span> {{user.name}}
+                                            {{user.lastName}}
+                                            {{user.lastName2}}<br>
+                                            <span class="subtitles2">Edad:</span> {{user.age}} <br>
+                                            <span class="subtitles2">Telefono:</span> {{user.phone}} <br>
+                                            <span class="subtitles2">Escuela:</span> {{user.school.name}} <br>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 wp">
+                                        <h3 class="titles">Foto de perfil</h3>
+                                        <h5 class="subtitles">La foto de perfil es opcional</h5>
+                                        <form enctype="multipart/form-data">
+                                            <div class="photoCenter">
+                                                <div class="profileImage"
+                                                    [ngStyle]="{'background-image': 'url(' + imageSrc + ')'}">
+                                                    <div class="containerImage">
+                                                        <button mat-raised-button (click)="fileInput.click()"
+                                                            color="primary">Seleccionar</button>
+
+                                                        <input #fileInput type="file" id="imageProfile"
+                                                            name="imageProfile" accept=".png, .jpg"
+                                                            (change)="onUpload($event)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12 controllers">
+                                <button mat-raised-button matStepperPrevious color="primary" class="float-left"
+                                    (click)="logUp()">Registrarse</button>
+
+                            </div>
+                            <div class="col-lg-12 ">
+                                <button mat-stroked-button matStepperPrevious color="accent"
+                                    class="float-left">Atras</button>
+                                <button mat-stroked-button (click)="stepper.reset()" color="warn"
+                                    class="float-right">Limpiar</button>
+                            </div>
+
+                        </div>
+
+                    </mat-step>
+                </mat-horizontal-stepper>
+            </mat-card>
+        </div>
+        <div class="col-lg-4 wp image">
+        </div>
+    </div>

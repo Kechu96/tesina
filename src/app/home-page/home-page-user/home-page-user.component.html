@@ -1,0 +1,167 @@
+<mat-toolbar color="primary">
+        <button type="button" mat-icon-button>
+          <mat-icon routerLink="home">school</mat-icon>
+        </button>
+        <span routerLink="home" class="title">Homeless</span>
+        <span class="spacer"></span>
+       
+        <ng-container >
+          <a  class="nav-link" routerLink="/login">Iniciar sesión</a>
+          <a class="nav-link" routerLink="/register">Registrarse</a>
+          <button mat-icon-button >
+              <mat-icon>help</mat-icon>
+            </button>
+        </ng-container>
+      </mat-toolbar>
+<div class="container principial-container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5" style="margin-top: 20px;">
+        <div class="col-lg-7">
+            <img class="img-fluid rounded mb-4 mb-lg-0 img-cta"
+                src="../../../assets/images/universitarios-buying-1news024x682-791x475.jpg" alt="">
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-5">
+            <h1 class="titles">Iniciar sesión</h1>
+            <p class="text-cta">Busca ahora tu hogar ideal para concretar con exito tus estudios y disfrutar al máximo tu estadia en la cidad</p>
+            <button mat-raised-button color="primary" type="button" routerLink="/login">
+                Iniciar sesion
+            </button>
+
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <div class="row align-items-center my-5" style="margin-top: 20px;">
+        
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-5">
+            <h1 class="titles">¿Aún no tienes cuenta?</h1>
+            <p class="text-cta">Nuestro objetivo es que los chavos que vienen a la ciudad de Aguascalientes a estudiar y
+                superarse
+                encuentren su alojamiento ideal sin necesidad de los tramites tediosos y tardados. Da clic en
+                en boton para conocer mas</p>
+            <button mat-raised-button color="primary" type="button" routerLink="/register">
+                Registrate
+            </button>
+
+        </div>
+        <div class="col-lg-7">
+            <img class="img-fluid rounded mb-4 mb-lg-0 img-cta"
+                src="../../../assets/images/universitarios-buying-1news024x682-791x475.jpg" alt="">
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="row" style="margin-bottom: 15px;">
+        <div class="col-lg-12">
+            <div class="parallax">
+                <div class="spacer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente modi enim rem
+                    dolorem,
+
+                </div>
+                <div class="message my-5 py-4  no-border">
+                    <div class="card-body">
+                        <h2 class="titles  text-center objetive">Objetivo</h2>
+                        <p class="text-white m-0 text-justify text-objetive">Nuestro objetivo es que los chavos que
+                            vienen a la
+                            ciudad de
+                            Aguascalientes a estudiar y superarse encuentren su alojamiento ideal sin necesidad de los
+                            tramites
+                            tediosos y tardados brindandoles herramientas nuevas y enfocadas a estudiantes al mismo
+                            tiempo que
+                            personas externas puedan publicar sus propiedades y darse a conocer entre la comunidad
+                            universitaria. Da clic en
+                            en boton para conocer mas sobre nosotros.
+
+                        </p>
+                        <button mat-raised-button color="primary" class="buttonInfo">Saber mas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-md-4 mb-5">
+            <mat-card class="">
+                <mat-card-header>
+                    <button mat-fab>
+                        <mat-icon>favorite</mat-icon>
+                    </button>
+                </mat-card-header>
+                <div class="card-body">
+                    <h2 class="titles text-center">Lista de deseos</h2>
+                    <p class="card-text text-justify">Busca alquileres de tu agrado y guardalos en tu lista de deseos
+                        para elegir el que mas te agrade!.</p>
+                    <div class="footer-info text-center">
+                        <button mat-raised-button color="primary">Mas información</button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-5">
+            <mat-card class="" id="mat-card">
+                <div class="hide-block">
+                    <mat-card-header>
+                        <button mat-fab>
+                            <mat-icon>people</mat-icon>
+                        </button>
+                    </mat-card-header>
+                    <div class="card-body">
+                        <h2 class="titles text-center">Trato en línea</h2>
+                        <p class="card-text text-justify">Ponte en contacto con el dueño de la propiedad y lleguen a un
+                            acuerdo en línea sin necesidad de realizar visitas.</p>
+                        <div class="footer-info">
+                            <button mat-raised-button color="primary">Mas información</button>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-5">
+            <mat-card class="">
+                <mat-card-header>
+                    <button mat-fab>
+                        <mat-icon>stars</mat-icon>
+                    </button>
+                </mat-card-header>
+                <div class="card-body">
+                    <h2 class="titles text-center">Crea una reseña</h2>
+                    <p class="card-text text-justify">Califica la experiencia viviendo en una propiedad y ayuda al dueño
+                        a generar interes en su publicación.</p>
+                    <div class="footer-info text-center">
+                        <button mat-raised-button color="primary">Mas información</button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <!-- /.col-md-4 -->
+
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="parallax2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas exercitationem aperiam aut est
+                nesciunt consequatur placeat voluptatum voluptatibus. Tempora quibusdam, a illo fugiat quo amet est eius
+                adipisci asperiores corrupti.
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>

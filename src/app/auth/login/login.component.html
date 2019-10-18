@@ -1,0 +1,53 @@
+<div class="container margin-top">
+    <div class="row without-padding  justify-content-center  ">
+        <div class="col-lg-6 col-md-7 col-sm-8 col-xs-12 wp">
+            <mat-progress-bar *ngIf="load" mode="indeterminate" class="progress-bar"></mat-progress-bar>
+            <mat-card class="no-border">
+                <div class="row">
+                    <div class="col-md-12 login-titles">
+                        <h3 class="titles text-center">Iniciar sesión</h3>
+                        <p class="subtitles text-center">Utiliza tu cuenta</p>
+                    </div>
+                    <div class="col-md-12">
+                        <form [formGroup]="loginForm" (ngSubmit)="login()" class="row">
+                            <div class="col-md-12 text-center">
+                                <mat-form-field appearance="outline" class="fieldLogin">
+                                    <mat-label>Correo electronico</mat-label>
+                                    <input matInput formControlName="email" type="email" id="email" placeholder="">
+                                    <mat-icon matSuffix>alternate_email</mat-icon>
+                                    <mat-error *ngIf="(invalidEntry('email')) && isRequired('email')">Campo
+                                        obligatorio</mat-error>
+                                    <mat-error
+                                        *ngIf="(invalidEntry('email')) && loginForm.controls['email'].errors.pattern">
+                                        Ingresa un formato valido para el correo
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-12 text-center formElements">
+                                <mat-form-field appearance="outline" class="fieldLogin">
+                                    <mat-label>Contraseña</mat-label>
+                                    <input matInput formControlName="password" id="password" type="password"
+                                        placeholder="">
+                                    <mat-icon matSuffix>vpn_key</mat-icon>
+                                    <mat-error *ngIf="(invalidEntry('password')) && isRequired('password')">Campo
+                                        obligatorio</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button mat-raised-button type="submit" [disabled]="!loginForm.valid"
+                                    class="fieldLogin inputsLogin loginButton" color="primary">
+                                    <ng-container *ngIf="!load">Iniciar sesión</ng-container>
+                                    <ng-container *ngIf="load">Iniciando sesión</ng-container>
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </mat-card>
+        </div>
+    </div>
+</div>
